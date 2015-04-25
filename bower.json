@@ -1,0 +1,23 @@
+{
+  "name": "mat-input-decorator",
+  "license": "BSD-3-Clause",
+  "version": "0.8.0",
+  "description": "This component is used to decorate material inputs.",
+  "authors": [
+    "Giuliano Rullo <g.rullo@expandjs.com>",
+    "Maurizio Stefàno <m.stefano@expandjs.com>",
+    "Robert Manolea <r.manolea@expandjs.com>"
+  ],
+  "main": [
+    "mat-input-decorator.html"
+  ],
+  "keywords": [
+    "web-components"
+  ],
+  "dependencies": {
+    "expandjs": "ExpandJS/expandjs",
+    "mat-divider": "ExpandJS/mat-divider",
+    "mat-ink": "ExpandJS/mat-ink",
+    "polymer": "Polymer/polymer#^0.5"
+  }
+}
