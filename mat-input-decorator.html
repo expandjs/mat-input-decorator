@@ -206,7 +206,7 @@ This element is used to decorate material inputs.
             <mat-divider id="matInputDivider" cap></mat-divider>
             <div id="matInputLabel" hidden?="{{emptyLabel || !floatingLabel || fullWidth}}"></div>
             <mat-ink id="matInputMain" disabled="{{disabled}}" flex?="{{fullWidth}}">
-                <mat-ink id="matInputPlaceholder" color="{{floated && focused ? 'light-blue-700a' : ''}}" disabled="{{disabled}}" font-type="{{floated ? 'caption' : ''}}" hidden?="{{emptyLabel || (!empty && !floatingLabel)}}" opacity="{{floated ? 'secondary' : 'hint'}}" fit>{{(floated ? '' : inputPrefix) + label}}</mat-ink>
+                <mat-ink id="matInputPlaceholder" color="{{floated && focused ? 'light-blue-a700' : ''}}" disabled="{{disabled}}" font-type="{{floated ? 'caption' : ''}}" hidden?="{{emptyLabel || (!empty && !floatingLabel)}}" opacity="{{floated ? 'secondary' : 'hint'}}" fit>{{(floated ? '' : inputPrefix) + label}}</mat-ink>
                 <template if="{{inputPrefix}}"><div id="matInputPrefix">{{inputPrefix}}</div></template>
                 <template if="{{inputSuffix}}"><mat-ink id="matInputSuffix" disabled="{{disabled}}" opacity="secondary">{{inputSuffix}}</mat-ink></template>
                 <div id="matInputMirror" hidden?="{{!mirrored}}"></div>
@@ -214,7 +214,7 @@ This element is used to decorate material inputs.
             </mat-ink>
             <div id="matInputUnderline" hidden?="{{fullWidth}}">
                 <mat-ink id="matInputUnderlineDefault" opacity="divider"></mat-ink>
-                <mat-ink id="matInputUnderlineFocused" color="{{invalid ? 'red-400' : 'light-blue-700a'}}" opacity="divider"></mat-ink>
+                <mat-ink id="matInputUnderlineFocused" color="{{invalid ? 'red-400' : 'light-blue-a700'}}" opacity="divider"></mat-ink>
             </div>
             <mat-ink id="matInputHelper" color="{{invalid ? 'red-400' : ''}}" disabled="{{disabled}}" font-type="caption" opacity="hint">
                 <div id="matInputCounter" hidden?="{{!maxLength}}">{{maxLength ? chars + ' / ' + maxLength : ''}}</div>
