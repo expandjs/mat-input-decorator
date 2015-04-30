@@ -1,8 +1,8 @@
 {
   "name": "mat-input-decorator",
   "license": "BSD-3-Clause",
-  "version": "0.8.4",
-  "description": "This element is used to decorate material inputs.",
+  "version": "0.8.5",
+  "description": "A custom element used to decorate various inputs with the Material Design style",
   "homepage": "http://www.expandjs.com/elements/mat-input-decorator",
   "authors": [
     "Giuliano Rullo <g.rullo@expandjs.com>",
