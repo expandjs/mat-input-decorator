@@ -30,7 +30,7 @@ This element is used to decorate material inputs.
     }
 </style>
 
-<polymer-element name="mat-input-decorator" attributes="chars description disabled empty emptyLabel error floated floatingLabel focused fullWidth inputElement inputPrefix inputSuffix inputValue invalid invalidMessage label maxLength maxRows minRows mirrored">
+<polymer-element name="mat-input-decorator" attributes="chars description disabled empty emptyLabel error floated floatingLabel focused fullWidth injected inputPrefix inputSuffix invalid invalidMessage label maxLength maxRows minRows mirrored value">
 
     <template>
         <style>
@@ -355,10 +355,10 @@ This element is used to decorate material inputs.
                 /**
                  * The appended input's element.
                  *
-                 * @attribute inputElement
+                 * @attribute injected
                  * @type Element
                  */
-                inputElement: {reflect: false, value: null},
+                injected: {reflect: false, value: null},
 
                 /**
                  * The input's prefix.
@@ -377,15 +377,6 @@ This element is used to decorate material inputs.
                  * @default ""
                  */
                 inputSuffix: {reflect: false, value: ''},
-
-                /**
-                 * The input's plain value.
-                 *
-                 * @attribute inputValue
-                 * @type string
-                 * @default ""
-                 */
-                inputValue: {reflect: false, value: ''},
 
                 /**
                  * If set to true, the input's value is not valid.
@@ -448,7 +439,16 @@ This element is used to decorate material inputs.
                  * @type boolean
                  * @default false
                  */
-                mirrored: {reflect: true, value: false}
+                mirrored: {reflect: true, value: false},
+
+                /**
+                 * The input's plain value.
+                 *
+                 * @attribute value
+                 * @type string
+                 * @default ""
+                 */
+                value: {reflect: false, value: ''}
             },
 
             /**
@@ -464,16 +464,11 @@ This element is used to decorate material inputs.
             /*********************************************************************/
 
             // OBSERVER
-            inputElementChanged: function (pre, post) {
+            injectedChanged: function (pre, post) {
                 var self = this;
                 if (arguments.length < 2) { return; }
                 if (pre) { XP.unlisten(pre, {input: self.handleInputBinded}); }
                 if (post) { XP.listen(post, {input: self.handleInputBinded}); }
-            },
-
-            // OBSERVER
-            inputValueChanged: function (pre, post) {
-                this.mirror(post);
             },
 
             // OBSERVER
@@ -486,6 +481,11 @@ This element is used to decorate material inputs.
             minRowsChanged: function (pre, post) {
                 var self = this, rows = XP.toInt(post, true) || 1;
                 if (self.mirrored) { XP.setStyle(self.$.matInputMirror, 'min-height', (rows * 20) + 'px'); }
+            },
+
+            // OBSERVER
+            valueChanged: function (pre, post) {
+                this.mirror(post);
             },
 
             /*********************************************************************/
