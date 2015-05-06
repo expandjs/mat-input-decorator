@@ -467,8 +467,8 @@ This element is used to decorate material inputs.
             injectedChanged: function (pre, post) {
                 var self = this;
                 if (arguments.length < 2) { return; }
-                if (pre) { XP.unlisten(pre, {input: self.handleInputBinded}); }
-                if (post) { XP.listen(post, {input: self.handleInputBinded}); }
+                if (pre) { XP.unlisten(pre, {input: self.handleInputBound}); }
+                if (post) { XP.listen(post, {input: self.handleInputBound}); }
             },
 
             // OBSERVER
@@ -492,7 +492,7 @@ This element is used to decorate material inputs.
 
             // LISTENER
             ready: function () {
-                this.handleInputBinded = this.handleInput.bind(this);
+                this.handleInputBound = this.handleInput.bind(this);
             },
 
             /*********************************************************************/
