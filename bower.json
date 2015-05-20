@@ -3,7 +3,7 @@
   "license": "BSD-3-Clause",
   "version": "0.8.9",
   "description": "A custom element used to decorate various inputs with the Material Design style",
-  "homepage": "http://www.expandjs.com/elements/mat-input-decorator",
+  "homepage": "http://expandjs.com/elements/mat-input-decorator",
   "authors": [
     "Giuliano Rullo <g.rullo@expandjs.com>",
     "Maurizio Stefàno <m.stefano@expandjs.com>",
