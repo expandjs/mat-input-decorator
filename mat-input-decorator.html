@@ -124,16 +124,23 @@ This element is used to decorate material inputs.
 
             :host #matInputPlaceholder {
                 pointer-events: none !important;
-                transition: font-size .4s cubic-bezier(.55, 0, .01, 1),
-                            font-weight .4s cubic-bezier(.55, 0, .01, 1),
-                            letter-spacing .4s cubic-bezier(.55, 0, .01, 1),
-                            line-height .4s cubic-bezier(.55, 0, .01, 1),
-                            transform .4s cubic-bezier(.55, 0, .01, 1);
+                -webkit-transition: font-size 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                                    font-weight 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                                    letter-spacing 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                                    line-height 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                                    -webkit-transform 0.4s cubic-bezier(0.55, 0, 0.01, 1);
+                transition: font-size 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                            font-weight 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                            letter-spacing 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                            line-height 0.4s cubic-bezier(0.55, 0, 0.01, 1),
+                            transform 0.4s cubic-bezier(0.55, 0, 0.01, 1);
                 will-change: font-size, font-weight, letter-spacing, line-height, opacity, transform;
             }
 
             :host([floated]) #matInputPlaceholder {
+                -webkit-transform: translate3d(0, -22px, 0);
                 transform: translate3d(0, -22px, 0);
+                -webkit-transform-origin: 0 0 0;
                 transform-origin: 0 0 0;
             }
 
@@ -162,7 +169,7 @@ This element is used to decorate material inputs.
 
             :host #matInputUnderlineDefault {
                 border-top: 1px solid currentColor;
-                transition: border .4s cubic-bezier(.55, 0, .01, 1);
+                transition: border 0.4s cubic-bezier(0.55, 0, 0.01, 1);
                 will-change: border;
             }
 
@@ -173,13 +180,16 @@ This element is used to decorate material inputs.
             :host #matInputUnderlineFocused {
                 border-top: 2px solid currentColor;
                 margin-top: -1px;
+                -webkit-transform: scale(0, 1);
                 transform: scale(0, 1);
-                transition: transform .4s cubic-bezier(.55, 0, .01, 1);
+                -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.55, 0, 0.01, 1);
+                transition: transform 0.4s cubic-bezier(0.55, 0, 0.01, 1);
                 will-change: transform;
             }
 
             :host([focused]) #matInputUnderlineFocused,
             :host([invalid]) #matInputUnderlineFocused {
+                -webkit-transform: scale(1, 1);
                 transform: scale(1, 1);
             }
 
