@@ -23,9 +23,9 @@
     "**/.*"
   ],
   "dependencies": {
-    "expandjs": "ExpandJS/expandjs",
-    "mat-divider": "ExpandJS/mat-divider",
-    "mat-ink": "ExpandJS/mat-ink",
+    "expandjs": "ExpandJS/expandjs#alpha",
+    "mat-divider": "ExpandJS/mat-divider#alpha",
+    "mat-ink": "ExpandJS/mat-ink#alpha",
     "polymer": "Polymer/polymer#^0.5"
   }
 }
