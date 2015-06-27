@@ -16,10 +16,10 @@ This element is used to decorate material inputs.
 @homepage http://expandjs.com/elements/mat-input-decorator
 
 @dependency polymer Polymer/polymer#^1.0.0
-@dependency expandjs ExpandJS/expandjs#0.9.1
+@dependency expandjs ExpandJS/expandjs#0.9.2
 @dependency iron-flex-layout PolymerElements/iron-flex-layout#^1.0.0
-@dependency mat-divider ExpandJS/mat-divider#0.9.1
-@dependency mat-ink ExpandJS/mat-ink#0.9.1
+@dependency mat-divider ExpandJS/mat-divider#0.9.2
+@dependency mat-ink ExpandJS/mat-ink#0.9.2
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -29,7 +29,7 @@ This element is used to decorate material inputs.
 <link rel="import" href="../mat-ink/mat-ink.html">
 
 <style>
-    html [fullWidth] + [fullWidth] mat-input-decorator #matInputDivider {
+    html [fullWidth] + [fullWidth] #matInputDivider {
         display: block;
     }
 </style>
@@ -50,6 +50,7 @@ This element is used to decorate material inputs.
         }
 
         :host([disabled]) {
+            cursor: not-allowed !important;
             pointer-events: none !important;
         }
 
@@ -93,8 +94,11 @@ This element is used to decorate material inputs.
         }
 
         :host([full-width]) #matInputWrapper {
-            @apply(--layout-horizontal);
             padding: 18px 0;
+        }
+
+        :host([full-width]:not([mirrored])) #matInputWrapper {
+            @apply(--layout-horizontal);
         }
 
         :host #matInputDivider {
@@ -225,7 +229,7 @@ This element is used to decorate material inputs.
         }
 
         :host([full-width][mirrored]) #matInputHelper {
-            margin: 20px 0 -4px 0;
+            margin-bottom: -4px;
         }
 
         :host #matInputCounter {
