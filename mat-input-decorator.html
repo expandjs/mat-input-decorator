@@ -16,10 +16,10 @@ This element is used to decorate material inputs.
 @homepage http://expandjs.com/elements/mat-input-decorator
 
 @dependency polymer Polymer/polymer#^1.0.0
-@dependency expandjs ExpandJS/expandjs#0.9.3
+@dependency expandjs ExpandJS/expandjs#0.9.4
 @dependency iron-flex-layout PolymerElements/iron-flex-layout#^1.0.0
-@dependency mat-divider ExpandJS/mat-divider#0.9.3
-@dependency mat-ink ExpandJS/mat-ink#0.9.3
+@dependency mat-divider ExpandJS/mat-divider#0.9.4
+@dependency mat-ink ExpandJS/mat-ink#0.9.4
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -297,7 +297,6 @@ This element is used to decorate material inputs.
                  * @default 0
                  */
                 chars: {
-                    reflectToAttribute: true,
                     type: Number,
                     value: 0
                 },
@@ -422,11 +421,11 @@ This element is used to decorate material inputs.
                 /**
                  * The appended input's element.
                  *
-                 * @attribute injected
+                 * @attribute input
                  * @type Element
                  */
-                injected: {
-                    observer: '_injectedChanged',
+                input: {
+                    observer: '_inputChanged',
                     value: null
                 },
 
@@ -600,7 +599,7 @@ This element is used to decorate material inputs.
             /*********************************************************************/
 
             // OBSERVER
-            _injectedChanged: function (post, pre) {
+            _inputChanged: function (post, pre) {
 
                 // Vars
                 var self = this;
@@ -634,7 +633,7 @@ This element is used to decorate material inputs.
 
             // HANDLER
             _handleInput: function () {
-                this._mirror(this.injected.value);
+                this._mirror(this.input.value);
             }
         });
     </script>
