@@ -7,7 +7,17 @@ The complete set of contributors may be found at https://expandjs.github.io/CONT
 -->
 
 <!--
-This element is used to decorate material inputs.
+An element used to decorate text inputs as [Material Design text fields](http://www.google.com/design/spec/components/text-fields.html#text-fields-single-line-text-field).
+
+__Important:__ This element should not be used directly, instead it should be used inside other custom elements.
+
+It only applies the style on the input. All the logic must be done by the developer implementing the element.
+
+```html
+<mat-input-decorator id="myDecorator" focused="{{focused}}">
+    <input id="myInput" type="text"/>
+</mat-input-decorator>
+```
 
 @element mat-input-decorator
 @description A custom element used to decorate various inputs with the Material Design style
@@ -17,10 +27,10 @@ This element is used to decorate material inputs.
 @repository https://github.com/ExpandJS/mat-input-decorator
 
 @dependency polymer Polymer/polymer#^1.0.0
-@dependency expandjs ExpandJS/expandjs#0.9.5
+@dependency expandjs ExpandJS/expandjs#0.9.6
 @dependency iron-flex-layout PolymerElements/iron-flex-layout#^1.0.0
-@dependency mat-divider ExpandJS/mat-divider#0.9.5
-@dependency mat-ink ExpandJS/mat-ink#0.9.5
+@dependency mat-divider ExpandJS/mat-divider#0.9.6
+@dependency mat-ink ExpandJS/mat-ink#0.9.6
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -91,6 +101,10 @@ This element is used to decorate material inputs.
 
         :host #matInputWrapper {
             display: block;
+            padding: 16px 0 4px 0;
+        }
+
+        :host([empty-label]) #matInputWrapper {
             padding: 8px 0 4px 0;
         }
 
@@ -117,7 +131,7 @@ This element is used to decorate material inputs.
         }
 
         :host #matInputMain {
-            margin: 6px 0;
+            margin: 4px 0;
             position: relative;
         }
 
@@ -232,6 +246,10 @@ This element is used to decorate material inputs.
 
         :host([full-width][mirrored]) #matInputHelper {
             margin-bottom: -4px;
+        }
+
+        :host([helper-disabled]) #matInputHelper {
+            display: none !important;
         }
 
         :host #matInputCounter {
@@ -414,6 +432,19 @@ This element is used to decorate material inputs.
                  * @default false
                  */
                 fullWidth: {
+                    reflectToAttribute: true,
+                    type: Boolean,
+                    value: false
+                },
+
+                /**
+                 * If set to true, the helper is hidden.
+                 *
+                 * @attribute helper-disabled
+                 * @type boolean
+                 * @default false
+                 */
+                helperDisabled: {
                     reflectToAttribute: true,
                     type: Boolean,
                     value: false
