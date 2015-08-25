@@ -157,7 +157,7 @@ It only applies the style on the input. All the logic must be done by the develo
                         letter-spacing 0.4s cubic-bezier(0.55, 0, 0.01, 1),
                         line-height 0.4s cubic-bezier(0.55, 0, 0.01, 1),
                         transform 0.4s cubic-bezier(0.55, 0, 0.01, 1);
-            will-change: font-size, font-weight, letter-spacing, line-height, opacity, transform;
+            will-change: font-size, font-weight, letter-spacing, line-height, opacity, -webkit-transform, transform;
         }
 
         :host([floated]) #matInputPlaceholder {
@@ -225,7 +225,7 @@ It only applies the style on the input. All the logic must be done by the develo
             transform: scale(0, 1);
             -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.55, 0, 0.01, 1);
             transition: transform 0.4s cubic-bezier(0.55, 0, 0.01, 1);
-            will-change: transform;
+            will-change: -webkit-transform, transform;
         }
 
         :host([focused]) #matInputUnderlineFocused,
